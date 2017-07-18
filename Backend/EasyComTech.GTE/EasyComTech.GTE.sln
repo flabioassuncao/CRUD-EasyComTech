@@ -17,15 +17,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.1 - Data", "5.1 - Data", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.2 - CrossCutting", "5.2 - CrossCutting", "{0A5C7707-1339-4F46-BD19-F271816E3DAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyComTech.GTE.Services.Api", "src\EasyComTech.GTE.Services.Api\EasyComTech.GTE.Services.Api.csproj", "{DD600C27-E416-4394-AC66-ADCE2A073D6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyComTech.GTE.Services.Api", "src\EasyComTech.GTE.Services.Api\EasyComTech.GTE.Services.Api.csproj", "{DD600C27-E416-4394-AC66-ADCE2A073D6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GTE.Application", "src\GTE.Application\GTE.Application.csproj", "{E0C72B11-14CA-49CF-8F68-BFACFD9E07C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GTE.Application", "src\GTE.Application\GTE.Application.csproj", "{E0C72B11-14CA-49CF-8F68-BFACFD9E07C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GTE.Domain", "src\GTE.Domain\GTE.Domain.csproj", "{B9325F4A-34B4-4E0C-9C1C-8C6B5486A219}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GTE.Domain", "src\GTE.Domain\GTE.Domain.csproj", "{B9325F4A-34B4-4E0C-9C1C-8C6B5486A219}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GTE.Infra.Data", "src\GTE.Infra.Data\GTE.Infra.Data.csproj", "{4919662E-F1F9-4022-BFC5-6A733AE4337E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GTE.Infra.Data", "src\GTE.Infra.Data\GTE.Infra.Data.csproj", "{4919662E-F1F9-4022-BFC5-6A733AE4337E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GTE.Infra.CrossCutting.IoC", "src\GTE.Infra.CrossCutting.IoC\GTE.Infra.CrossCutting.IoC.csproj", "{F11D76E7-4D4F-4528-963D-6D68DCFCC3D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GTE.Infra.CrossCutting.IoC", "src\GTE.Infra.CrossCutting.IoC\GTE.Infra.CrossCutting.IoC.csproj", "{F11D76E7-4D4F-4528-963D-6D68DCFCC3D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

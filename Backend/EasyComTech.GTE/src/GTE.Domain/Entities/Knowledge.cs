@@ -6,6 +6,11 @@ namespace GTE.Domain.Entities
 {
     public class Knowledge
     {
+        public Knowledge()
+        {
+            Id = new Guid();
+        }
+
         public Guid Id { get; set; }
         
         public int LevelOfKnowledgeIonic { get; set; }
@@ -61,5 +66,9 @@ namespace GTE.Domain.Entities
         public string OtherLanguageOrFramework { get; set; }
 
         public string LinkCRUD { get; set; }
+
+
+        public Guid? ProgrammerId { get; set; }
+        public virtual Programmer Programmer { get; set; }
     }
 }

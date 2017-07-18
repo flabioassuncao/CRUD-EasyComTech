@@ -6,9 +6,17 @@ namespace GTE.Domain.Entities
 {
     public class Programmer
     {
+        public Programmer()
+        {
+            Id = new Guid();
+            Excluded = false;
+        }
+
         public Guid Id { get; set; }
 
         public string Email { get; set; }
+
+        public bool Excluded { get; set; }
 
         public Guid OccupationAreaId { get; set; }
         public virtual OccupationArea OccupationArea { get; set; }

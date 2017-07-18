@@ -1,0 +1,14 @@
+C:\projetos\Pessoal\EasyComTec\CRUD-EasyComTech\Backend\EasyComTech.GTE\src\GTE.Infra.CrossCutting.IoC\bin\Debug\netstandard1.6\GTE.Infra.CrossCutting.IoC.deps.json
+C:\projetos\Pessoal\EasyComTec\CRUD-EasyComTech\Backend\EasyComTech.GTE\src\GTE.Infra.CrossCutting.IoC\bin\Debug\netstandard1.6\GTE.Infra.CrossCutting.IoC.dll
+C:\projetos\Pessoal\EasyComTec\CRUD-EasyComTech\Backend\EasyComTech.GTE\src\GTE.Infra.CrossCutting.IoC\bin\Debug\netstandard1.6\GTE.Infra.CrossCutting.IoC.pdb
+C:\projetos\Pessoal\EasyComTec\CRUD-EasyComTech\Backend\EasyComTech.GTE\src\GTE.Infra.CrossCutting.IoC\obj\Debug\netstandard1.6\GTE.Infra.CrossCutting.IoC.AssemblyInfo.cs
+C:\projetos\Pessoal\EasyComTec\CRUD-EasyComTech\Backend\EasyComTech.GTE\src\GTE.Infra.CrossCutting.IoC\obj\Debug\netstandard1.6\GTE.Infra.CrossCutting.IoC.dll
+C:\projetos\Pessoal\EasyComTec\CRUD-EasyComTech\Backend\EasyComTech.GTE\src\GTE.Infra.CrossCutting.IoC\obj\Debug\netstandard1.6\GTE.Infra.CrossCutting.IoC.pdb
+C:\projetos\Pessoal\EasyComTec\CRUD-EasyComTech\Backend\EasyComTech.GTE\src\GTE.Infra.CrossCutting.IoC\bin\Debug\netstandard1.6\appsettings.json
+C:\projetos\Pessoal\EasyComTec\CRUD-EasyComTech\Backend\EasyComTech.GTE\src\GTE.Infra.CrossCutting.IoC\bin\Debug\netstandard1.6\GTE.Application.dll
+C:\projetos\Pessoal\EasyComTec\CRUD-EasyComTech\Backend\EasyComTech.GTE\src\GTE.Infra.CrossCutting.IoC\bin\Debug\netstandard1.6\GTE.Domain.dll
+C:\projetos\Pessoal\EasyComTec\CRUD-EasyComTech\Backend\EasyComTech.GTE\src\GTE.Infra.CrossCutting.IoC\bin\Debug\netstandard1.6\GTE.Infra.Data.dll
+C:\projetos\Pessoal\EasyComTec\CRUD-EasyComTech\Backend\EasyComTech.GTE\src\GTE.Infra.CrossCutting.IoC\bin\Debug\netstandard1.6\GTE.Application.pdb
+C:\projetos\Pessoal\EasyComTec\CRUD-EasyComTech\Backend\EasyComTech.GTE\src\GTE.Infra.CrossCutting.IoC\bin\Debug\netstandard1.6\GTE.Domain.pdb
+C:\projetos\Pessoal\EasyComTec\CRUD-EasyComTech\Backend\EasyComTech.GTE\src\GTE.Infra.CrossCutting.IoC\bin\Debug\netstandard1.6\GTE.Infra.Data.pdb
+C:\projetos\Pessoal\EasyComTec\CRUD-EasyComTech\Backend\EasyComTech.GTE\src\GTE.Infra.CrossCutting.IoC\obj\Debug\netstandard1.6\GTE.Infra.CrossCutting.IoC.csprojResolveAssemblyReference.cache

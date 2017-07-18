@@ -1,13 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace GTE.Domain.Entities
 {
     public class AccountType
     {
+        public AccountType()
+        {
+            Id = new Guid();
+            BankInformation = new List<BankInformation>();
+        }
+
         public Guid Id { get; set; }
 
         public string Description { get; set; }
+
+        public virtual ICollection<BankInformation> BankInformation { get; set; }
     }
 }

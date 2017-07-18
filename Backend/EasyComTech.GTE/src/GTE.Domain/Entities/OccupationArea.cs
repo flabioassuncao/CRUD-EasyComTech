@@ -6,6 +6,11 @@ namespace GTE.Domain.Entities
 {
     public class OccupationArea
     {
+        public OccupationArea()
+        {
+            Id = new Guid();
+        }
+
         public Guid Id { get; set; }
 
         public string Name { get; set; }
@@ -23,13 +28,14 @@ namespace GTE.Domain.Entities
         public string Portfolio { get; set; }
 
         public Guid WillingnessToWorkId { get; set; }
-        public WillingnessToWork WillingnessToWork { get; set; }
+        public virtual WillingnessToWork WillingnessToWork { get; set; }
 
         public Guid BestTimeToWorkId { get; set; }
-        public BestTimeToWork BestTimeToWork { get; set; }
+        public virtual BestTimeToWork BestTimeToWork { get; set; }
         
         public decimal HourlySalaryRequirements { get; set; }
-
-
+        
+        public Guid? ProgrammerId { get; set; }
+        public virtual Programmer Programmer { get; set; }
     }
 }
