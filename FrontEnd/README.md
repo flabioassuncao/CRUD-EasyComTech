@@ -1,3 +1,3 @@
 # CRUD EasyComTech - Frontend
 
- - Angular2
+ - Angular4
