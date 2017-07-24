@@ -8,7 +8,7 @@ namespace GTE.Application.ViewModels
     {
         public OccupationAreaViewModel()
         {
-            Id = new Guid();
+            Id = Guid.NewGuid();
         }
 
         public Guid Id { get; set; }

@@ -7,7 +7,7 @@ namespace GTE.Domain.Entities
     {
         public AccountType()
         {
-            Id = new Guid();
+            Id = Guid.NewGuid();
             BankInformation = new List<BankInformation>();
         }
 

@@ -8,7 +8,7 @@ namespace GTE.Application.ViewModels
     {
         public BestTimeToWorkViewModel()
         {
-            Id = new Guid();
+            Id = Guid.NewGuid();
         }
 
         public Guid Id { get; set; }

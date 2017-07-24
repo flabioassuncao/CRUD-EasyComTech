@@ -8,7 +8,7 @@ namespace GTE.Application.ViewModels
     {
         public WillingnessToWorkViewModel()
         {
-            Id = new Guid();
+            Id = Guid.NewGuid();
         }
 
         public Guid Id { get; set; }

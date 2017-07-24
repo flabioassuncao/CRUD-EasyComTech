@@ -9,7 +9,7 @@ namespace GTE.Domain.Entities
     {
         public WillingnessToWork()
         {
-            Id = new Guid();
+            Id = Guid.NewGuid();
             OccupationArea = new List<OccupationArea>();
         }
 

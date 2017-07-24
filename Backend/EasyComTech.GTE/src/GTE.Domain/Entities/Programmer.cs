@@ -8,7 +8,7 @@ namespace GTE.Domain.Entities
     {
         public Programmer()
         {
-            Id = new Guid();
+            Id = Guid.NewGuid();
             Excluded = false;
         }
 

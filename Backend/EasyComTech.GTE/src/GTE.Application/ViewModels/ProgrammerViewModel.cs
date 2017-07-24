@@ -8,7 +8,7 @@ namespace GTE.Application.ViewModels
     {
         public ProgrammerViewModel()
         {
-            Id = new Guid();
+            Id = Guid.NewGuid();
             Excluded = false;
         }
 

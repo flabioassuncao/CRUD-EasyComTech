@@ -8,7 +8,7 @@ namespace GTE.Domain.Entities
     {
         public BestTimeToWork()
         {
-            Id = new Guid();
+            Id = Guid.NewGuid();
             OccupationArea = new List<OccupationArea>();
         }
 

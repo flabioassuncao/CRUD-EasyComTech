@@ -20,9 +20,15 @@ namespace GTE.Infra.CrossCutting.IoC
             services.AddSingleton(Mapper.Configuration);
             services.AddScoped<IMapper>(sp => new Mapper(sp.GetRequiredService<IConfigurationProvider>(), sp.GetService));
             services.AddScoped<IProgrammerAppService, ProgrammerAppService>();
+            services.AddScoped<IBankInformationAppService, BankInformationAppService>();
+            services.AddScoped<IOccupationAreaAppService, OccupationAreaAppService>();
+            services.AddScoped<IKnowledgeAppService, KnowledgeAppService>();
 
             //Infra - DATA
             services.AddScoped<IProgrammerRepository, ProgrammerRepository>();
+            services.AddScoped<IOccupationAreaRepository, OccupationAreaRepository>();
+            services.AddScoped<IKnowledgeRepository, KnowledgeRepository>();
+            services.AddScoped<IBankInformationRepository, BankInformationRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<GTEContext>();
         }

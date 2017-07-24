@@ -22,16 +22,14 @@ namespace EasyComTech.GTE.Services.Api.Controllers
         [Route("get-all-programmers")]
         public IActionResult Get()
         {
-
-            return Ok(new { pro = _programmerAppService.GetAllProgrammers().ToList() });
+            return Response(_programmerAppService.GetAllProgrammers().ToList());
         }
 
         [HttpGet]
         [Route("get-programmer-by-id/{id:guid}")]
         public IActionResult Get(Guid id)
         {
-            var programmer = _programmerAppService.GetById(id);
-            return Response(programmer);
+            return Response(_programmerAppService.GetById(id));
         }
 
         [HttpPost]
@@ -39,8 +37,7 @@ namespace EasyComTech.GTE.Services.Api.Controllers
         public IActionResult Post([FromBody] ProgrammerViewModel model)
         {
             _programmerAppService.AddProgrammer(model);
-
-            return Ok();
+            return Response();
         }
 
         [HttpPut]
@@ -48,7 +45,6 @@ namespace EasyComTech.GTE.Services.Api.Controllers
         public IActionResult Put([FromBody] ProgrammerViewModel model)
         {
             _programmerAppService.UpdateProgramer(model);
-
             return Response();
         }
 
@@ -57,7 +53,6 @@ namespace EasyComTech.GTE.Services.Api.Controllers
         public IActionResult Delete(Guid id)
         {
             _programmerAppService.Remove(id);
-
             return Response();
         }
     }

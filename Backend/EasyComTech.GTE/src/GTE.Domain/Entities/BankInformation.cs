@@ -8,7 +8,7 @@ namespace GTE.Domain.Entities
     {
         public BankInformation()
         {
-            Id = new Guid();
+            Id = Guid.NewGuid();
         }
 
         public Guid Id { get; set; }
