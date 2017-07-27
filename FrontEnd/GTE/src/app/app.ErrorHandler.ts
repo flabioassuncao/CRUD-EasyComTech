@@ -6,9 +6,11 @@ export class ErrorHandler{
         let errorMessage: string
         if(error instanceof Response)
         {
-            errorMessage = `Erro ${error.status} ao acessar a URL ${error.url} - ${error.statusText}`
+            const body = error.json() || '';
+            const err = body.errors || JSON.stringify(body);
+            errorMessage = `${error.status} - ${error.statusText || ''} ${err}`;
         }else{
-            errorMessage = error.toString();
+            errorMessage = error.message ? error.message : error.toString();
         }
         console.log(errorMessage)
         return Observable.throw (errorMessage);

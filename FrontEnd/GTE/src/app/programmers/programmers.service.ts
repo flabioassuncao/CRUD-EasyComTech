@@ -26,7 +26,7 @@ export class ProgrammersService {
     }
 
     deleteProgrammer(id: string): void{
-        let response = this.http.get(`${MEAT_API}delete-programmer/${id}`)
+        let response = this.http.delete(`${MEAT_API}delete-programmer/${id}`)
             .map(this.extractData)
             .catch(ErrorHandler.handleError)
     }
@@ -48,6 +48,27 @@ export class ProgrammersService {
 
     knowledge(id: string): Observable<any>{
         let response = this.http.get(`${MEAT_API}get-knowledge-by-id/${id}`)
+            .map(this.extractData)
+            .catch(ErrorHandler.handleError)
+        return response;
+    }
+
+    AccountType(): Observable<any[]>{
+        let response = this.http.get(`${MEAT_API}get-all-accout-type`)
+            .map(this.extractData)
+            .catch(ErrorHandler.handleError)
+        return response;
+    }
+
+    bestTimeToWork(): Observable<any[]>{
+        let response = this.http.get(`${MEAT_API}get-all-best-time-to-work`)
+            .map(this.extractData)
+            .catch(ErrorHandler.handleError)
+        return response;
+    }
+    
+    willingnessToWork(): Observable<any[]>{
+        let response = this.http.get(`${MEAT_API}get-all-willingness-to-work`)
             .map(this.extractData)
             .catch(ErrorHandler.handleError)
         return response;

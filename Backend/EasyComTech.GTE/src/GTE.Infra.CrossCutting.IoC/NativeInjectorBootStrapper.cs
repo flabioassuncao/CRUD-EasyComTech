@@ -23,12 +23,18 @@ namespace GTE.Infra.CrossCutting.IoC
             services.AddScoped<IBankInformationAppService, BankInformationAppService>();
             services.AddScoped<IOccupationAreaAppService, OccupationAreaAppService>();
             services.AddScoped<IKnowledgeAppService, KnowledgeAppService>();
+            services.AddScoped<IAccountTypeAppService, AccountTypeAppService>();
+            services.AddScoped<IBestTimeToWorkAppService, BestTimeToWorkAppService>();
+            services.AddScoped<IWillingnessToWorkAppService, WillingnessToWorkAppService>();
 
             //Infra - DATA
             services.AddScoped<IProgrammerRepository, ProgrammerRepository>();
             services.AddScoped<IOccupationAreaRepository, OccupationAreaRepository>();
             services.AddScoped<IKnowledgeRepository, KnowledgeRepository>();
             services.AddScoped<IBankInformationRepository, BankInformationRepository>();
+            services.AddScoped<IAccountTypeRepository, AccountTypeRepository>();
+            services.AddScoped<IBestTimeToWorkRepository, BestTimeToWorkRepository>();
+            services.AddScoped<IWillingnessToWorkRepository, WillingnessToWorkRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<GTEContext>();
         }

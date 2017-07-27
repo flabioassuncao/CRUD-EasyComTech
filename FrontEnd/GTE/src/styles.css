@@ -270,3 +270,8 @@ body {
 {
   height: 5px;
 }
+
+.erro-email{
+  margin-bottom: 0px !important;
+  font-size: small !important;
+}

@@ -15,6 +15,7 @@ import { BankInformationComponent } from "./programmers/programmer-detail/bank-i
 import { KnowledgeComponent } from "./programmers/programmer-detail/knowledge/knowledge.component";
 import { RegisterComponent } from './register/register.component';
 import { ProgrammersService } from "./programmers/programmers.service";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 
 
@@ -34,6 +35,8 @@ import { ProgrammersService } from "./programmers/programmers.service";
   imports: [
     BrowserModule,
     HttpModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [ProgrammersService],
