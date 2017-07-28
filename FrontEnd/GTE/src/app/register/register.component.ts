@@ -6,6 +6,7 @@ import 'rxjs/add/observable/fromEvent';
 import 'rxjs/add/observable/merge';
 import 'rxjs/add/operator/debounceTime';
 import { ProgrammersService } from "../programmers/programmers.service";
+import { Programmer } from "../models/programmer";
 
 
 
@@ -27,13 +28,24 @@ export class RegisterComponent implements OnInit, AfterViewInit {
   public errors: any[] = [];
   emailForm: FormGroup;
   occupationAreaForm: FormGroup;
+  bankInformattionForm: FormGroup;
+  knowledgeForm: FormGroup;
+
   programmer: any;
   displayMessageEmail: { [key: string]: string } = {};
   displayMessageOccupationArea: { [key: string]: string } = {};
+  displayMessageBankInformation: { [key: string]: string } = {};
+  displayMessageKnowledge: { [key: string]: string } = {};
+
   private validationMessagesEmail: {[key: string]: { [key: string]: string}};
   private validationMessagesOccupationArea: {[key: string]: { [key: string]: string}};
+  private validationMessagesBankInformation: {[key: string]: { [key: string]: string}};
+  private validationMessagesKnowledge: {[key: string]: { [key: string]: string}};
+
   genericValidator: GenericValidator;
   genericValidatorOccupationArea: GenericValidator;
+  genericValidatorBankInformation: GenericValidator;
+  genericValidatorKnowledge: GenericValidator;
 
   constructor(private fb: FormBuilder,
               vcr: ViewContainerRef,
@@ -60,8 +72,26 @@ export class RegisterComponent implements OnInit, AfterViewInit {
       bestTimeToWorkId: { required: 'selecione uma opção'}
     };
 
+    this.validationMessagesBankInformation = {
+      //não requeridos....
+    };
+
+    this.validationMessagesKnowledge = {
+      levelOfKnowledgeIonic: { required: 'selecione uma opção' },
+      levelOfKnowledgeAndroid: { required: 'selecione uma opção' },
+      levelOfKnowledgeIOS: { required: 'selecione uma opção' },
+      levelOfKnowledgeBootstrap: { required: 'selecione uma opção' },
+      levelOfKnowledgeJquery: { required: 'selecione uma opção' },
+      levelOfKnowledgeAngularJs: { required: 'selecione uma opção' },
+      levelOfKnowledgeAspNetMVC: { required: 'selecione uma opção' },
+      levelOfKnowledgePHP: { required: 'selecione uma opção' },
+      levelOfKnowledgeWordpress: { required: 'selecione uma opção' }
+    }
+
     this.genericValidator = new GenericValidator(this.validationMessagesEmail);
     this.genericValidatorOccupationArea = new GenericValidator(this.validationMessagesOccupationArea);
+    this.genericValidatorBankInformation = new GenericValidator(this.validationMessagesBankInformation);
+    this.genericValidatorKnowledge = new GenericValidator(this.validationMessagesKnowledge);
   }
 
   ngOnInit() {
@@ -81,10 +111,51 @@ export class RegisterComponent implements OnInit, AfterViewInit {
       phone:['', [Validators.required]],
       city: ['', [Validators.required]],
       state: ['', [Validators.required]],
+      portfolio: [''],
       salaryrequirements: ['', [Validators.required]],
       bestTimeToWorkId: ['',[Validators.required]],
       willingnessToWorkId: ['', Validators.required]
     });
+
+    this.bankInformattionForm = this.fb.group({
+      name: [''],
+      cpf: [''],
+      bank: [''],
+      agency: [''],
+      accountTypeId: [''],
+      accountNumber:['']
+    });
+
+    this.knowledgeForm = this.fb.group({
+      levelOfKnowledgeIonic: ['', [Validators.required]],
+      levelOfKnowledgeAndroid: ['', [Validators.required]],
+      levelOfKnowledgeIOS: ['', [Validators.required]],
+      levelOfKnowledgeHTML: [''],
+      levelOfKnowledgeCSS: [''],
+      levelOfKnowledgeBootstrap: ['', [Validators.required]],
+      levelOfKnowledgeJquery: ['', [Validators.required]],
+      levelOfKnowledgeAngularJs: ['', [Validators.required]],
+      levelOfKnowledgeJava: [''],
+      levelOfKnowledgeAspNetMVC: ['', [Validators.required]],
+      levelOfKnowledgeC: [''],
+      levelOfKnowledgeCPlusPlus: [''],
+      levelOfKnowledgeCake: [''],
+      levelOfKnowledgeDjango: [''],
+      levelOfKnowledgeMajento: [''],
+      levelOfKnowledgePHP: ['', [Validators.required]],
+      levelOfKnowledgeWordpress: ['', [Validators.required]],
+      levelOfKnowledgePhyton: [''],
+      levelOfKnowledgeRuby: [''],
+      levelOfKnowledgeMySQLServer: [''],
+      levelOfKnowledgeMySQL: [''],
+      levelOfKnowledgeSalesforce: [''],
+      levelOfKnowledgePhotoshop: [''],
+      levelOfKnowledgeIllustrator: [''],
+      levelOfKnowledgeSEO: [''],
+      otherLanguageOrFramework: [''],
+      linkCRUD: ['']
+    });
+    
   }
 
   ngAfterViewInit(): void {
@@ -98,6 +169,35 @@ export class RegisterComponent implements OnInit, AfterViewInit {
     Observable.merge(this.occupationAreaForm.valueChanges, ...controlBlurs).debounceTime(100).subscribe(value => {
       this.displayMessageOccupationArea = this.genericValidatorOccupationArea.processMessages(this.occupationAreaForm);
     });
+
+    Observable.merge(this.bankInformattionForm.valueChanges, ...controlBlurs).debounceTime(100).subscribe(value => {
+      this.displayMessageBankInformation = this.genericValidatorBankInformation.processMessages(this.bankInformattionForm);
+    });
+
+    Observable.merge(this.knowledgeForm.valueChanges, ...controlBlurs).debounceTime(100).subscribe(value => {
+      this.displayMessageKnowledge = this.genericValidatorKnowledge.processMessages(this.knowledgeForm);
+    });
+  }
+
+
+  saveProgrammer(){
+
+    let programmer: Programmer
+
+    programmer = this.emailForm.value;
+    programmer.bankInformation = this.bankInformattionForm.value
+    programmer.knowledge = this.knowledgeForm.value
+    programmer.occupationArea = this.occupationAreaForm.value
+    console.log(programmer);
+    this.programmerService.saveProgrammer(programmer).map(teste => console.log(teste));
+
+    // let programmer: any;
+    //programmer.email = this.emailForm.value.email;
+    // programmer.OccupationArea = this.occupationAreaForm.value;
+    // programmer.BankInformation = this.bankInformattionForm.value;
+    // programmer.knowledgeForm.value;
+
+    
   }
 
 }

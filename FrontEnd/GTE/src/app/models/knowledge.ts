@@ -1,0 +1,29 @@
+export class knowledge {
+      levelOfKnowledgeIonic: string;
+      levelOfKnowledgeAndroid: string;
+      levelOfKnowledgeIOS: string;
+      levelOfKnowledgeHTML: string;
+      levelOfKnowledgeCSS: string;
+      levelOfKnowledgeBootstrap: string;
+      levelOfKnowledgeJquery: string;
+      levelOfKnowledgeAngularJs: string;
+      levelOfKnowledgeJava: string;
+      levelOfKnowledgeAspNetMVC: string;
+      levelOfKnowledgeC: string;
+      levelOfKnowledgeCPlusPlus: string;
+      levelOfKnowledgeCake: string;
+      levelOfKnowledgeDjango: string;
+      levelOfKnowledgeMajento: string;
+      levelOfKnowledgePHP: string;
+      levelOfKnowledgeWordpress: string;
+      levelOfKnowledgePhyton: string;
+      levelOfKnowledgeRuby: string;
+      levelOfKnowledgeMySQLServer: string;
+      levelOfKnowledgeMySQL: string;
+      levelOfKnowledgeSalesforce: string;
+      levelOfKnowledgePhotoshop: string;
+      levelOfKnowledgeIllustrator: string;
+      levelOfKnowledgeSEO: string;
+      otherLanguageOrFramework: string;
+      linkCRUD: string
+}

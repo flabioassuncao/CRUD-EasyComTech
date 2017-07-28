@@ -7,14 +7,25 @@
         <div class="jumbotron welcome-jumbotron">
            <h1>Cadastre-se</h1>
            <p>
-             Sistema de gerenciamento de talentos da Easy.
+             Banco de Talentos - Easy Communication & Technology (Developers/Desenvolvedores)
            </p>
+              <h3>
+                <small>
+                  <a href="https://youtu.be/teXgoCzunVE">https://youtu.be/teXgoCzunVE</a><br />
+                  We appreciate your contact, check that you do not need to fill out the full form if already has this information on its linkedin, and check out the links at the end of the tutorials (developers).<br />
+                  Já agradecemos o seu contato, confira que você não precisa preencher o formulário completo caso já tenha essas informações no seu linkedin, e no final confira os links dos tutoriais (desenvolvedores). <br />
+                  How we work / Como trabalhamos: <a href="https://docs.google.com/document/d/145QuJ8-efr-pmNGV-2DOOGHD-1dc3MERSeL5g0XoqmM">https://docs.google.com/document/d/145QuJ8-efr-pmNGV-2DOOGHD-1dc3MERSeL5g0XoqmM</a>
+                </small>
+              </h3> 
+              <span class="pull-left"><span class="mandatory"><strong>*</strong>Obrigatório</span></span>
+               <br />
+               <br />
               <div class="col-md-3"></div>
               <div class="form-group col-md-6" [ngClass]="{'has-error': displayMessageEmail.email }">
-                <label for="exampleInputEmail1">Endereço de e-mail</label>
+                <label for="exampleInputEmail1">Endereço de e-mail <span class="mandatory">*</span></label>
                 <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                <input type="email" class="form-control" formControlName="email" placeholder="Email">
+                <input type="email" class="form-control" formControlName="email" placeholder="Enter email">
                 </div>
                 <span class="text-danger" *ngIf="displayMessageEmail.email">
                   <p class="erro-email" [innerHTML]="displayMessageEmail.email"></p>
@@ -33,6 +44,24 @@
                       <h3 class="box-title">Área de atuação</h3>
                     </div>
                     <div class="box-body">
+                      
+                      <div class="row">
+                        <div class="col-xs-2">
+                        </div>
+                        <div class="col-xs-8">
+                          <div class="callout callout-danger">
+                            <p>
+                              If you are a developer or DBA, continue filling out this form / Se você atua como desenvolvedor ou DBA, continue o preenchimento deste formulário. <br />
+                              If you act as a designer, fill out the form available at / Se você atua como designer, preencha ao formulário disponível em <a href="https://goo.gl/forms/UJl8Oa91ubN3HRUm1">https://goo.gl/forms/UJl8Oa91ubN3HRUm1</a> <br />
+                              If you work in the administrative, customer service or commercial area, fill out the form available at / Se você atua na área administrativa, atendimento ao cliente ou comercial, preencha ao formulário disponível em  <a href="https://goo.gl/forms/0M99jjUwnIAw0flJ2">https://goo.gl/forms/0M99jjUwnIAw0flJ2</a>
+                            </p>
+                          </div>
+                          <span class="pull-left"><span class="mandatory"><strong>*</strong>Obrigatório</span></span>
+                          <br />
+                        </div>
+                        <div class="col-xs-2">
+                        </div>
+                      </div>
                       <div class="row">
                         <div class="col-xs-3">
                         </div>
@@ -132,7 +161,7 @@
                         <div class="col-xs-6">
                           <div class="form-group">
                             <label class="pull-left">Portfolio</label>
-                            <input type="text" class="form-control"  placeholder="Enter portfolio">
+                            <input type="text" class="form-control"  placeholder="Enter portfolio" formControlName="portfolio">
                         </div>
                         </div>
                         <div class="col-xs-3">
@@ -192,32 +221,36 @@
                         <div class="col-xs-3">
                         </div>
                       </div>
-
-                      <div class="row">
-                        <div class="col-xs-3"></div>
-                        <div class="col-xs-6">
-                          <span class="input-group-btn">
-                            <button type="button" class="pull-right btn btn-danger btn-flat">Continue !</button>
-                          </span>
-                        </div>
-                        <div class="col-xs-3"></div>
-                      </div>
                     </div>
                   </div>
 </form>
-<form novalidate > <!-- [formGroup]="occupationAreaForm" -->
+
+<form novalidate [formGroup]="bankInformattionForm">   
                   <div class="box box-danger" [hidden]="!occupationAreaForm.valid">
                     <div class="box-header with-border">
                       <h3 class="box-title">Informação bancária</h3>
                     </div>
                     <div class="box-body">
                       <div class="row">
+                        <div class="col-xs-2">
+                        </div>
+                        <div class="col-xs-8">
+                          <div class="callout callout-default">
+                            <p>
+                              You can choose to receive your payment through Paypal, PagSeguro or conventional bank accounts / Você pode optar em receber seu pagamento pelo Paypal, PagSeguro ou contas bancarias convencionais
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-xs-2">
+                        </div>
+                      </div>
+                      <div class="row">
                         <div class="col-xs-3">
                         </div>
                         <div class="col-xs-6">
                           <div class="form-group">
                             <label class="pull-left">Nome</label>
-                            <input type="text" class="form-control"  placeholder="Enter nome">
+                            <input type="text" class="form-control"  placeholder="Enter nome" formControlName="name">
                         </div>
                         </div>
                         <div class="col-xs-3">
@@ -230,7 +263,7 @@
                         <div class="col-xs-6">
                           <div class="form-group">
                             <label class="pull-left">CPF</label>
-                            <input type="text" class="form-control"  placeholder="Enter CPF">
+                            <input type="text" class="form-control"  placeholder="Enter CPF" formControlName="cpf">
                         </div>
                         </div>
                         <div class="col-xs-3">
@@ -243,7 +276,7 @@
                         <div class="col-xs-6">
                           <div class="form-group">
                             <label class="pull-left">Banco (Itau, Bradesco, etc...)</label>
-                            <input type="text" class="form-control"  placeholder="Enter banco">
+                            <input type="text" class="form-control"  placeholder="Enter banco" formControlName="bank">
                         </div>
                         </div>
                         <div class="col-xs-3">
@@ -256,7 +289,7 @@
                         <div class="col-xs-6">
                           <div class="form-group">
                             <label class="pull-left">Agência</label>
-                            <input type="text" class="form-control"  placeholder="Enter agência">
+                            <input type="text" class="form-control"  placeholder="Enter agência" formControlName="agency">
                         </div>
                         </div>
                         <div class="col-xs-3">
@@ -270,16 +303,10 @@
                           <div class="form-group">
                             <label class="pull-left">Tipo de conta</label>
                             <br>
-                            <div class="radio">
+                            <div class="radio" *ngFor="let account of accountType">
                               <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                                Corrente
-                              </label>
-                            </div>
-                            <div class="radio">
-                              <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                                Poupança
+                                <input type="radio"  value="{{account.id}}" formControlName="accountTypeId">
+                                {{account.description}}
                               </label>
                             </div>
                         </div>
@@ -294,36 +321,42 @@
                         <div class="col-xs-6">
                           <div class="form-group">
                             <label class="pull-left">Número da conta</label>
-                            <input type="text" class="form-control"  placeholder="Enter numero da conta">
+                            <input type="text" class="form-control"  placeholder="Enter numero da conta" formControlName="accountNumber">
                         </div>
                         </div>
                         <div class="col-xs-3">
                         </div>
                       </div>
-
-                      <div class="row">
-                        <div class="col-xs-3"></div>
-                        <div class="col-xs-6">
-                          <span class="input-group-btn">
-                            <button type="button" class="pull-right btn btn-danger btn-flat">Continue !</button>
-                          </span>
-                        </div>
-                        <div class="col-xs-3"></div>
-                      </div>
                     </div>
                   </div>
 </form>
-<form novalidate > <!-- [formGroup]="occupationAreaForm" -->
-                  <div class="box box-danger" [hidden]="true">
+                
+<form novalidate [formGroup]="knowledgeForm"> 
+                  <div class="box box-danger" [hidden]="!occupationAreaForm.valid">
                     <div class="box-header with-border">
                       <h3 class="box-title">Conhecimentos</h3>
                     </div>
                     <div class="box-body">
                       <div class="row">
+                        <div class="col-xs-2">
+                        </div>
+                        <div class="col-xs-8">
+                          <div class="callout callout-default">
+                            <p>
+                              Rate yourself from 0 to 5 for the knowledge specified below, and that's okay if you do not know many things, the important thing is to be honest! / Avalie-se de 0 a 5 quanto aos conhecimentos especificados abaixo, e tudo bem se não souber de muitas coisas, o importante é que seja sincero!
+                            </p>
+                          </div>
+                          <span class="pull-left"><span class="mandatory"><strong>*</strong>Obrigatório</span></span>
+                          <br />
+                        </div>
+                        <div class="col-xs-2">
+                        </div>
+                      </div>
+                      <div class="row">
                         <div class="col-xs-3"></div>
                         <div class="col-xs-6">
                           <div class="form-group">
-                            <label class="pull-left">Ionic</label>
+                            <label class="pull-left">Ionic <span class="mandatory">*</span></label>
                             <br>
                             <div class="spaceknowlegde"></div>
                             <span class="direct-chat-timestamp pull-left">Não conheço</span>
@@ -333,37 +366,37 @@
                               <div class="form-group">
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red"> 
+                                    <input type="radio" value="0" class="flat-red" formControlName="levelOfKnowledgeIonic"> 
                                     0
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="1" class="flat-red" formControlName="levelOfKnowledgeIonic">
                                     1
                                   </label>
                                 </div>
                                 <div class="col-md-2  text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="2" class="flat-red" formControlName="levelOfKnowledgeIonic">
                                     2
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="3" class="flat-red" formControlName="levelOfKnowledgeIonic">
                                     3
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="4" class="flat-red" formControlName="levelOfKnowledgeIonic">
                                     4
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red" checked>
+                                    <input type="radio" value="5" class="flat-red" formControlName="levelOfKnowledgeIonic">
                                     5
                                   </label>
                                 </div>
@@ -377,7 +410,7 @@
                         <div class="col-xs-3"></div>
                         <div class="col-xs-6">
                           <div class="form-group">
-                            <label class="pull-left">Android</label>
+                            <label class="pull-left">Android <span class="mandatory">*</span></label>
                             <br>
                             <div class="spaceknowlegde"></div>
                             <span class="direct-chat-timestamp pull-left">Não conheço</span>
@@ -387,37 +420,37 @@
                               <div class="form-group">
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red"> 
+                                    <input type="radio" value="0" class="flat-red" formControlName="levelOfKnowledgeAndroid"> 
                                     0
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="1" class="flat-red" formControlName="levelOfKnowledgeAndroid">
                                     1
                                   </label>
                                 </div>
                                 <div class="col-md-2  text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="2" class="flat-red" formControlName="levelOfKnowledgeAndroid">
                                     2
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="3" class="flat-red" formControlName="levelOfKnowledgeAndroid">
                                     3
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="4" class="flat-red" formControlName="levelOfKnowledgeAndroid">
                                     4
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red" checked>
+                                    <input type="radio" value="5" class="flat-red" formControlName="levelOfKnowledgeAndroid">
                                     5
                                   </label>
                                 </div>
@@ -432,7 +465,7 @@
                         <div class="col-xs-3"></div>
                         <div class="col-xs-6">
                           <div class="form-group">
-                            <label class="pull-left">IOS</label>
+                            <label class="pull-left">IOS <span class="mandatory">*</span></label>
                             <br>
                             <div class="spaceknowlegde"></div>
                             <span class="direct-chat-timestamp pull-left">Não conheço</span>
@@ -442,37 +475,37 @@
                               <div class="form-group">
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red"> 
+                                    <input type="radio" value="0" class="flat-red" formControlName="levelOfKnowledgeIOS"> 
                                     0
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="1" class="flat-red" formControlName="levelOfKnowledgeIOS">
                                     1
                                   </label>
                                 </div>
                                 <div class="col-md-2  text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="2" class="flat-red" formControlName="levelOfKnowledgeIOS">
                                     2
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="3" class="flat-red" formControlName="levelOfKnowledgeIOS">
                                     3
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="4" class="flat-red" formControlName="levelOfKnowledgeIOS">
                                     4
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red" checked>
+                                    <input type="radio" value="5" class="flat-red" formControlName="levelOfKnowledgeIOS">
                                     5
                                   </label>
                                 </div>
@@ -497,37 +530,37 @@
                               <div class="form-group">
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red"> 
+                                    <input type="radio" value="0" class="flat-red" formControlName="levelOfKnowledgeHTML"> 
                                     0
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="1" class="flat-red" formControlName="levelOfKnowledgeHTML">
                                     1
                                   </label>
                                 </div>
                                 <div class="col-md-2  text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="2" class="flat-red" formControlName="levelOfKnowledgeHTML">
                                     2
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="3" class="flat-red" formControlName="levelOfKnowledgeHTML">
                                     3
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="4" class="flat-red" formControlName="levelOfKnowledgeHTML">
                                     4
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red" checked>
+                                    <input type="radio" value="5" class="flat-red" formControlName="levelOfKnowledgeHTML">
                                     5
                                   </label>
                                 </div>
@@ -552,37 +585,37 @@
                               <div class="form-group">
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red"> 
+                                    <input type="radio" value="0" class="flat-red" formControlName="levelOfKnowledgeCSS"> 
                                     0
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="1" class="flat-red" formControlName="levelOfKnowledgeCSS">
                                     1
                                   </label>
                                 </div>
                                 <div class="col-md-2  text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="2" class="flat-red" formControlName="levelOfKnowledgeCSS">
                                     2
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="3" class="flat-red" formControlName="levelOfKnowledgeCSS">
                                     3
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="4" class="flat-red" formControlName="levelOfKnowledgeCSS">
                                     4
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red" checked>
+                                    <input type="radio" value="5" class="flat-red" formControlName="levelOfKnowledgeCSS">
                                     5
                                   </label>
                                 </div>
@@ -597,7 +630,7 @@
                         <div class="col-xs-3"></div>
                         <div class="col-xs-6">
                           <div class="form-group">
-                            <label class="pull-left">Bootstrap</label>
+                            <label class="pull-left">Bootstrap <span class="mandatory">*</span></label>
                             <br>
                             <div class="spaceknowlegde"></div>
                             <span class="direct-chat-timestamp pull-left">Não conheço</span>
@@ -607,37 +640,37 @@
                               <div class="form-group">
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red"> 
+                                    <input type="radio" value="0" class="flat-red" formControlName="levelOfKnowledgeBootstrap"> 
                                     0
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="1" class="flat-red" formControlName="levelOfKnowledgeBootstrap">
                                     1
                                   </label>
                                 </div>
                                 <div class="col-md-2  text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="2" class="flat-red" formControlName="levelOfKnowledgeBootstrap">
                                     2
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="3" class="flat-red" formControlName="levelOfKnowledgeBootstrap">
                                     3
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="4" class="flat-red" formControlName="levelOfKnowledgeBootstrap">
                                     4
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red" checked>
+                                    <input type="radio" value="5" class="flat-red" formControlName="levelOfKnowledgeBootstrap">
                                     5
                                   </label>
                                 </div>
@@ -652,7 +685,7 @@
                         <div class="col-xs-3"></div>
                         <div class="col-xs-6">
                           <div class="form-group">
-                            <label class="pull-left">JQuery</label>
+                            <label class="pull-left">JQuery <span class="mandatory">*</span></label>
                             <br>
                             <div class="spaceknowlegde"></div>
                             <span class="direct-chat-timestamp pull-left">Não conheço</span>
@@ -662,37 +695,37 @@
                               <div class="form-group">
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red"> 
+                                    <input type="radio" value="0" class="flat-red" formControlName="levelOfKnowledgeJquery"> 
                                     0
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="1" class="flat-red" formControlName="levelOfKnowledgeJquery">
                                     1
                                   </label>
                                 </div>
                                 <div class="col-md-2  text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="2" class="flat-red" formControlName="levelOfKnowledgeJquery">
                                     2
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="3" class="flat-red" formControlName="levelOfKnowledgeJquery">
                                     3
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="4" class="flat-red" formControlName="levelOfKnowledgeJquery">
                                     4
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red" checked>
+                                    <input type="radio" value="5" class="flat-red" formControlName="levelOfKnowledgeJquery">
                                     5
                                   </label>
                                 </div>
@@ -707,7 +740,7 @@
                         <div class="col-xs-3"></div>
                         <div class="col-xs-6">
                           <div class="form-group">
-                            <label class="pull-left">AngularJS</label>
+                            <label class="pull-left">AngularJS <span class="mandatory">*</span></label>
                             <br>
                             <div class="spaceknowlegde"></div>
                             <span class="direct-chat-timestamp pull-left">Não conheço</span>
@@ -717,37 +750,37 @@
                               <div class="form-group">
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red"> 
+                                    <input type="radio" value="0" class="flat-red" formControlName="levelOfKnowledgeAngularJs"> 
                                     0
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="1" class="flat-red" formControlName="levelOfKnowledgeAngularJs">
                                     1
                                   </label>
                                 </div>
                                 <div class="col-md-2  text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="2" class="flat-red" formControlName="levelOfKnowledgeAngularJs">
                                     2
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="3" class="flat-red" formControlName="levelOfKnowledgeAngularJs">
                                     3
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="4" class="flat-red" formControlName="levelOfKnowledgeAngularJs">
                                     4
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red" checked>
+                                    <input type="radio" value="5" class="flat-red" formControlName="levelOfKnowledgeAngularJs">
                                     5
                                   </label>
                                 </div>
@@ -772,37 +805,37 @@
                               <div class="form-group">
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red"> 
+                                    <input type="radio" value="0" class="flat-red" formControlName="levelOfKnowledgeJava"> 
                                     0
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="1" class="flat-red" formControlName="levelOfKnowledgeJava">
                                     1
                                   </label>
                                 </div>
                                 <div class="col-md-2  text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="2" class="flat-red" formControlName="levelOfKnowledgeJava">
                                     2
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="3" class="flat-red" formControlName="levelOfKnowledgeJava">
                                     3
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="4" class="flat-red" formControlName="levelOfKnowledgeJava">
                                     4
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red" checked>
+                                    <input type="radio" value="5" class="flat-red" formControlName="levelOfKnowledgeJava">
                                     5
                                   </label>
                                 </div>
@@ -817,7 +850,7 @@
                         <div class="col-xs-3"></div>
                         <div class="col-xs-6">
                           <div class="form-group">
-                            <label class="pull-left">ASP.NET MVC</label>
+                            <label class="pull-left">ASP.NET MVC <span class="mandatory">*</span></label>
                             <br>
                             <div class="spaceknowlegde"></div>
                             <span class="direct-chat-timestamp pull-left">Não conheço</span>
@@ -827,37 +860,37 @@
                               <div class="form-group">
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red"> 
+                                    <input type="radio" value="0" class="flat-red" formControlName="levelOfKnowledgeAspNetMVC"> 
                                     0
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="1" class="flat-red" formControlName="levelOfKnowledgeAspNetMVC">
                                     1
                                   </label>
                                 </div>
                                 <div class="col-md-2  text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="2" class="flat-red" formControlName="levelOfKnowledgeAspNetMVC">
                                     2
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="3" class="flat-red" formControlName="levelOfKnowledgeAspNetMVC">
                                     3
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="4" class="flat-red" formControlName="levelOfKnowledgeAspNetMVC">
                                     4
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red" checked>
+                                    <input type="radio" value="5" class="flat-red" formControlName="levelOfKnowledgeAspNetMVC">
                                     5
                                   </label>
                                 </div>
@@ -882,37 +915,37 @@
                               <div class="form-group">
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red"> 
+                                    <input type="radio" value="0" class="flat-red" formControlName="levelOfKnowledgeC"> 
                                     0
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="1" class="flat-red" formControlName="levelOfKnowledgeC">
                                     1
                                   </label>
                                 </div>
                                 <div class="col-md-2  text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="2" class="flat-red" formControlName="levelOfKnowledgeC">
                                     2
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="3" class="flat-red" formControlName="levelOfKnowledgeC">
                                     3
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="4" class="flat-red" formControlName="levelOfKnowledgeC">
                                     4
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red" checked>
+                                    <input type="radio" value="5" class="flat-red" formControlName="levelOfKnowledgeC">
                                     5
                                   </label>
                                 </div>
@@ -937,37 +970,37 @@
                               <div class="form-group">
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red"> 
+                                    <input type="radio" value="0" class="flat-red" formControlName="levelOfKnowledgeCPlusPlus"> 
                                     0
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="1" class="flat-red" formControlName="levelOfKnowledgeCPlusPlus">
                                     1
                                   </label>
                                 </div>
                                 <div class="col-md-2  text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="2" class="flat-red" formControlName="levelOfKnowledgeCPlusPlus">
                                     2
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="3" class="flat-red" formControlName="levelOfKnowledgeCPlusPlus">
                                     3
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="4" class="flat-red" formControlName="levelOfKnowledgeCPlusPlus">
                                     4
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red" checked>
+                                    <input type="radio" value="5" class="flat-red" formControlName="levelOfKnowledgeCPlusPlus">
                                     5
                                   </label>
                                 </div>
@@ -992,37 +1025,37 @@
                               <div class="form-group">
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red"> 
+                                    <input type="radio" value="0" class="flat-red" formControlName="levelOfKnowledgeCake"> 
                                     0
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="1" class="flat-red" formControlName="levelOfKnowledgeCake">
                                     1
                                   </label>
                                 </div>
                                 <div class="col-md-2  text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="2" class="flat-red" formControlName="levelOfKnowledgeCake">
                                     2
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="3" class="flat-red" formControlName="levelOfKnowledgeCake">
                                     3
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="4" class="flat-red" formControlName="levelOfKnowledgeCake">
                                     4
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red" checked>
+                                    <input type="radio" value="5" class="flat-red" formControlName="levelOfKnowledgeCake">
                                     5
                                   </label>
                                 </div>
@@ -1047,37 +1080,37 @@
                               <div class="form-group">
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red"> 
+                                    <input type="radio" value="0" class="flat-red" formControlName="levelOfKnowledgeDjango"> 
                                     0
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="1" class="flat-red" formControlName="levelOfKnowledgeDjango">
                                     1
                                   </label>
                                 </div>
                                 <div class="col-md-2  text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="2" class="flat-red" formControlName="levelOfKnowledgeDjango">
                                     2
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="3" class="flat-red" formControlName="levelOfKnowledgeDjango">
                                     3
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="4" class="flat-red" formControlName="levelOfKnowledgeDjango">
                                     4
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red" checked>
+                                    <input type="radio" value="5" class="flat-red" formControlName="levelOfKnowledgeDjango">
                                     5
                                   </label>
                                 </div>
@@ -1102,37 +1135,37 @@
                               <div class="form-group">
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red"> 
+                                    <input type="radio" value="0" class="flat-red" formControlName="levelOfKnowledgeMajento"> 
                                     0
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="1" class="flat-red" formControlName="levelOfKnowledgeMajento">
                                     1
                                   </label>
                                 </div>
                                 <div class="col-md-2  text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="2" class="flat-red" formControlName="levelOfKnowledgeMajento">
                                     2
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="3" class="flat-red" formControlName="levelOfKnowledgeMajento">
                                     3
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="4" class="flat-red" formControlName="levelOfKnowledgeMajento">
                                     4
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red" checked>
+                                    <input type="radio" value="5" class="flat-red" formControlName="levelOfKnowledgeMajento">
                                     5
                                   </label>
                                 </div>
@@ -1147,7 +1180,7 @@
                         <div class="col-xs-3"></div>
                         <div class="col-xs-6">
                           <div class="form-group">
-                            <label class="pull-left">PHP</label>
+                            <label class="pull-left">PHP <span class="mandatory">*</span></label>
                             <br>
                             <div class="spaceknowlegde"></div>
                             <span class="direct-chat-timestamp pull-left">Não conheço</span>
@@ -1157,37 +1190,37 @@
                               <div class="form-group">
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red"> 
+                                    <input type="radio" value="0" class="flat-red" formControlName="levelOfKnowledgePHP"> 
                                     0
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="1" class="flat-red" formControlName="levelOfKnowledgePHP">
                                     1
                                   </label>
                                 </div>
                                 <div class="col-md-2  text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="2" class="flat-red" formControlName="levelOfKnowledgePHP">
                                     2
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="3" class="flat-red" formControlName="levelOfKnowledgePHP">
                                     3
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="4" class="flat-red" formControlName="levelOfKnowledgePHP">
                                     4
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red" checked>
+                                    <input type="radio" value="5" class="flat-red" formControlName="levelOfKnowledgePHP">
                                     5
                                   </label>
                                 </div>
@@ -1202,7 +1235,7 @@
                         <div class="col-xs-3"></div>
                         <div class="col-xs-6">
                           <div class="form-group">
-                            <label class="pull-left">Wordpress</label>
+                            <label class="pull-left">Wordpress <span class="mandatory">*</span></label>
                             <br>
                             <div class="spaceknowlegde"></div>
                             <span class="direct-chat-timestamp pull-left">Não conheço</span>
@@ -1212,37 +1245,37 @@
                               <div class="form-group">
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red"> 
+                                    <input type="radio" value="0" class="flat-red" formControlName="levelOfKnowledgeWordpress"> 
                                     0
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="1" class="flat-red" formControlName="levelOfKnowledgeWordpress">
                                     1
                                   </label>
                                 </div>
                                 <div class="col-md-2  text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="2" class="flat-red" formControlName="levelOfKnowledgeWordpress">
                                     2
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="3" class="flat-red" formControlName="levelOfKnowledgeWordpress">
                                     3
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="4" class="flat-red" formControlName="levelOfKnowledgeWordpress">
                                     4
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red" checked>
+                                    <input type="radio" value="5" class="flat-red" formControlName="levelOfKnowledgeWordpress">
                                     5
                                   </label>
                                 </div>
@@ -1267,37 +1300,37 @@
                               <div class="form-group">
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red"> 
+                                    <input type="radio" value="0" class="flat-red" formControlName="levelOfKnowledgePhyton"> 
                                     0
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="1" class="flat-red" formControlName="levelOfKnowledgePhyton">
                                     1
                                   </label>
                                 </div>
                                 <div class="col-md-2  text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="2" class="flat-red" formControlName="levelOfKnowledgePhyton">
                                     2
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="3" class="flat-red" formControlName="levelOfKnowledgePhyton">
                                     3
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="4" class="flat-red" formControlName="levelOfKnowledgePhyton">
                                     4
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red" checked>
+                                    <input type="radio" value="5" class="flat-red" formControlName="levelOfKnowledgePhyton">
                                     5
                                   </label>
                                 </div>
@@ -1322,37 +1355,37 @@
                               <div class="form-group">
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red"> 
+                                    <input type="radio" value="0" class="flat-red" formControlName="levelOfKnowledgeRuby"> 
                                     0
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="1" class="flat-red" formControlName="levelOfKnowledgeRuby">
                                     1
                                   </label>
                                 </div>
                                 <div class="col-md-2  text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="2" class="flat-red" formControlName="levelOfKnowledgeRuby">
                                     2
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="3" class="flat-red" formControlName="levelOfKnowledgeRuby">
                                     3
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="4" class="flat-red" formControlName="levelOfKnowledgeRuby">
                                     4
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red" checked>
+                                    <input type="radio" value="5" class="flat-red" formControlName="levelOfKnowledgeRuby">
                                     5
                                   </label>
                                 </div>
@@ -1377,37 +1410,37 @@
                               <div class="form-group">
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red"> 
+                                    <input type="radio" value="0" class="flat-red" formControlName="levelOfKnowledgeMySQLServer"> 
                                     0
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="1" class="flat-red" formControlName="levelOfKnowledgeMySQLServer">
                                     1
                                   </label>
                                 </div>
                                 <div class="col-md-2  text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="2" class="flat-red" formControlName="levelOfKnowledgeMySQLServer">
                                     2
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="3" class="flat-red" formControlName="levelOfKnowledgeMySQLServer">
                                     3
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="4" class="flat-red" formControlName="levelOfKnowledgeMySQLServer">
                                     4
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red" checked>
+                                    <input type="radio" value="5" class="flat-red" formControlName="levelOfKnowledgeMySQLServer">
                                     5
                                   </label>
                                 </div>
@@ -1432,37 +1465,37 @@
                               <div class="form-group">
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red"> 
+                                    <input type="radio" value="0" class="flat-red" formControlName="levelOfKnowledgeMySQL"> 
                                     0
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="1" class="flat-red" formControlName="levelOfKnowledgeMySQL">
                                     1
                                   </label>
                                 </div>
                                 <div class="col-md-2  text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="2" class="flat-red" formControlName="levelOfKnowledgeMySQL">
                                     2
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="3" class="flat-red" formControlName="levelOfKnowledgeMySQL">
                                     3
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="4" class="flat-red" formControlName="levelOfKnowledgeMySQL">
                                     4
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red" checked>
+                                    <input type="radio" value="5" class="flat-red" formControlName="levelOfKnowledgeMySQL">
                                     5
                                   </label>
                                 </div>
@@ -1487,37 +1520,37 @@
                               <div class="form-group">
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red"> 
+                                    <input type="radio" value="0" class="flat-red" formControlName="levelOfKnowledgeSalesforce"> 
                                     0
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="1" class="flat-red" formControlName="levelOfKnowledgeSalesforce">
                                     1
                                   </label>
                                 </div>
                                 <div class="col-md-2  text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="2" class="flat-red" formControlName="levelOfKnowledgeSalesforce">
                                     2
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="3" class="flat-red" formControlName="levelOfKnowledgeSalesforce">
                                     3
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="4" class="flat-red" formControlName="levelOfKnowledgeSalesforce">
                                     4
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red" checked>
+                                    <input type="radio" value="5" class="flat-red" formControlName="levelOfKnowledgeSalesforce">
                                     5
                                   </label>
                                 </div>
@@ -1542,37 +1575,37 @@
                               <div class="form-group">
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red"> 
+                                    <input type="radio" value="0" class="flat-red" formControlName="levelOfKnowledgePhotoshop"> 
                                     0
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="1" class="flat-red" formControlName="levelOfKnowledgePhotoshop">
                                     1
                                   </label>
                                 </div>
                                 <div class="col-md-2  text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="2" class="flat-red" formControlName="levelOfKnowledgePhotoshop">
                                     2
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="3" class="flat-red" formControlName="levelOfKnowledgePhotoshop">
                                     3
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="4" class="flat-red" formControlName="levelOfKnowledgePhotoshop">
                                     4
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red" checked>
+                                    <input type="radio" value="5" class="flat-red" formControlName="levelOfKnowledgePhotoshop">
                                     5
                                   </label>
                                 </div>
@@ -1597,37 +1630,37 @@
                               <div class="form-group">
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red"> 
+                                    <input type="radio" value="0" class="flat-red" formControlName="levelOfKnowledgeIllustrator"> 
                                     0
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="1" class="flat-red" formControlName="levelOfKnowledgeIllustrator">
                                     1
                                   </label>
                                 </div>
                                 <div class="col-md-2  text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="2" class="flat-red" formControlName="levelOfKnowledgeIllustrator">
                                     2
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="3" class="flat-red" formControlName="levelOfKnowledgeIllustrator">
                                     3
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="4" class="flat-red" formControlName="levelOfKnowledgeIllustrator">
                                     4
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red" checked>
+                                    <input type="radio" value="5" class="flat-red" formControlName="levelOfKnowledgeIllustrator">
                                     5
                                   </label>
                                 </div>
@@ -1652,37 +1685,37 @@
                               <div class="form-group">
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red"> 
+                                    <input type="radio" value="0" class="flat-red" formControlName="levelOfKnowledgeSEO"> 
                                     0
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="1" class="flat-red" formControlName="levelOfKnowledgeSEO">
                                     1
                                   </label>
                                 </div>
                                 <div class="col-md-2  text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="2" class="flat-red" formControlName="levelOfKnowledgeSEO">
                                     2
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="3" class="flat-red" formControlName="levelOfKnowledgeSEO">
                                     3
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red">
+                                    <input type="radio" value="4" class="flat-red" formControlName="levelOfKnowledgeSEO">
                                     4
                                   </label>
                                 </div>
                                 <div class="col-md-2 text-center">
                                   <label>
-                                    <input type="radio" name="r3" class="flat-red" checked>
+                                    <input type="radio" value="5" class="flat-red" formControlName="levelOfKnowledgeSEO">
                                     5
                                   </label>
                                 </div>
@@ -1699,7 +1732,7 @@
                         <div class="col-xs-6">
                           <div class="form-group">
                             <label class="pull-left">Conhece mais alguma linguagem ou framework que não foi listado aqui em cima? Conte para nos e se auto avalie ainda de 0 a 5.</label>
-                            <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                            <textarea class="form-control" rows="3" placeholder="Enter ..." formControlName="otherLanguageOrFramework"></textarea>
                         </div>
                         </div>
                         <div class="col-xs-3">
@@ -1713,7 +1746,7 @@
                         <div class="col-xs-6">
                           <div class="form-group">
                             <label class="pull-left">Link CRUD</label>
-                            <input type="text" class="form-control"  placeholder="Enter link">
+                            <input type="text" class="form-control"  placeholder="Enter link" formControlName="linkCRUD">
                         </div>
                         </div>
                         <div class="col-xs-3">
@@ -1723,7 +1756,7 @@
                         <div class="col-xs-3"></div>
                         <div class="col-xs-6">
                           <span class="input-group-btn">
-                            <button type="button" class="pull-right btn btn-danger btn-flat">Finalizar !</button>
+                            <button type="button" class="pull-right btn btn-danger btn-flat" [disabled]="!knowledgeForm.valid" (click)="saveProgrammer()">Finalizar !</button>
                           </span>
                         </div>
                         <div class="col-xs-3"></div>

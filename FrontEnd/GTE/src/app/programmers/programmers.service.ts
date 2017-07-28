@@ -1,10 +1,11 @@
 import { Injectable } from "@angular/core";
-import { Http, Response } from "@angular/http";
+import { Http, Response, RequestOptions, Headers } from "@angular/http";
 import { Observable } from "rxjs/Observable";
 import 'rxjs/add/operator/map'
 import 'rxjs/add/operator/catch'
 import { MEAT_API } from "../app.api";
 import { ErrorHandler } from "../app.ErrorHandler";
+import { Programmer } from "../models/programmer";
 
 @Injectable()
 export class ProgrammersService {
@@ -71,6 +72,18 @@ export class ProgrammersService {
         let response = this.http.get(`${MEAT_API}get-all-willingness-to-work`)
             .map(this.extractData)
             .catch(ErrorHandler.handleError)
+        return response;
+    }
+
+    saveProgrammer(programmer: Programmer) : Observable<any>{
+        let headers = new Headers({'Content-Type': 'application/json'});
+        let options = new RequestOptions({ headers });
+
+        let response = this.http.post(`${MEAT_API}add-programmer`, programmer, options)
+            .map(this.extractData)
+            .catch(ErrorHandler.handleError)
+        console.log(response)
+        
         return response;
     }
 
