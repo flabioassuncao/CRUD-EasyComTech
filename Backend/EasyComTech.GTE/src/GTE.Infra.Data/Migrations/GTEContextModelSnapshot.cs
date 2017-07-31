@@ -35,7 +35,7 @@ namespace GTE.Infra.Data.Migrations
 
                     b.Property<string>("AccountNumber");
 
-                    b.Property<Guid>("AccountTypeId");
+                    b.Property<Guid?>("AccountTypeId");
 
                     b.Property<string>("Agency");
 
@@ -79,45 +79,45 @@ namespace GTE.Infra.Data.Migrations
 
                     b.Property<int>("LevelOfKnowledgeBootstrap");
 
-                    b.Property<int>("LevelOfKnowledgeC");
+                    b.Property<int?>("LevelOfKnowledgeC");
 
-                    b.Property<int>("LevelOfKnowledgeCPlusPlus");
+                    b.Property<int?>("LevelOfKnowledgeCPlusPlus");
 
-                    b.Property<int>("LevelOfKnowledgeCSS");
+                    b.Property<int?>("LevelOfKnowledgeCSS");
 
-                    b.Property<int>("LevelOfKnowledgeCake");
+                    b.Property<int?>("LevelOfKnowledgeCake");
 
-                    b.Property<int>("LevelOfKnowledgeDjango");
+                    b.Property<int?>("LevelOfKnowledgeDjango");
 
-                    b.Property<int>("LevelOfKnowledgeHTML");
+                    b.Property<int?>("LevelOfKnowledgeHTML");
 
                     b.Property<int>("LevelOfKnowledgeIOS");
 
-                    b.Property<int>("LevelOfKnowledgeIllustrator");
+                    b.Property<int?>("LevelOfKnowledgeIllustrator");
 
                     b.Property<int>("LevelOfKnowledgeIonic");
 
-                    b.Property<int>("LevelOfKnowledgeJava");
+                    b.Property<int?>("LevelOfKnowledgeJava");
 
                     b.Property<int>("LevelOfKnowledgeJquery");
 
-                    b.Property<int>("LevelOfKnowledgeMajento");
+                    b.Property<int?>("LevelOfKnowledgeMajento");
 
-                    b.Property<int>("LevelOfKnowledgeMySQL");
+                    b.Property<int?>("LevelOfKnowledgeMySQL");
 
-                    b.Property<int>("LevelOfKnowledgeMySQLServer");
+                    b.Property<int?>("LevelOfKnowledgeMySQLServer");
 
                     b.Property<int>("LevelOfKnowledgePHP");
 
-                    b.Property<int>("LevelOfKnowledgePhotoshop");
+                    b.Property<int?>("LevelOfKnowledgePhotoshop");
 
-                    b.Property<int>("LevelOfKnowledgePhyton");
+                    b.Property<int?>("LevelOfKnowledgePhyton");
 
-                    b.Property<int>("LevelOfKnowledgeRuby");
+                    b.Property<int?>("LevelOfKnowledgeRuby");
 
-                    b.Property<int>("LevelOfKnowledgeSEO");
+                    b.Property<int?>("LevelOfKnowledgeSEO");
 
-                    b.Property<int>("LevelOfKnowledgeSalesforce");
+                    b.Property<int?>("LevelOfKnowledgeSalesforce");
 
                     b.Property<int>("LevelOfKnowledgeWordpress");
 
@@ -213,8 +213,7 @@ namespace GTE.Infra.Data.Migrations
                 {
                     b.HasOne("GTE.Domain.Entities.AccountType", "AccountType")
                         .WithMany("BankInformation")
-                        .HasForeignKey("AccountTypeId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("AccountTypeId");
                 });
 
             modelBuilder.Entity("GTE.Domain.Entities.OccupationArea", b =>

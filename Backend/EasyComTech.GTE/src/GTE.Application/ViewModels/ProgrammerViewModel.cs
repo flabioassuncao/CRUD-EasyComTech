@@ -16,7 +16,7 @@ namespace GTE.Application.ViewModels
 
         public string Email { get; set; }
 
-        public bool Excluded { get; set; }
+        public bool? Excluded { get; set; }
 
         public Guid OccupationAreaId { get; set; }
         public OccupationAreaViewModel OccupationArea { get; set; }

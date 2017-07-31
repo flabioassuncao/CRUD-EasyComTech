@@ -21,12 +21,11 @@ namespace GTE.Domain.Entities
 
         public string Agency { get; set; }
 
-        public Guid AccountTypeId { get; set; }
+        public Guid? AccountTypeId { get; set; }
         public virtual AccountType AccountType { get; set; }
 
         public string AccountNumber { get; set; }
-
-
+        
         public Guid? ProgrammerId { get; set; }
         public virtual Programmer Programmer { get; set; }
     }

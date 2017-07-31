@@ -19,8 +19,7 @@ namespace GTE.Infra.Data.Mappings
 
             builder.HasOne(e => e.AccountType)
                 .WithMany(e => e.BankInformation)
-                .HasForeignKey(e => e.AccountTypeId)
-                .IsRequired(true);
+                .HasForeignKey(e => e.AccountTypeId);
 
             
         }

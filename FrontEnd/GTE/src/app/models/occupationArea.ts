@@ -6,7 +6,7 @@ export class OccupationArea {
       city: string
       state: string
       portfolio: string
-      salaryrequirements: string
+      HourlySalaryRequirements: string
       bestTimeToWorkId: string
       willingnessToWorkId: string
 }

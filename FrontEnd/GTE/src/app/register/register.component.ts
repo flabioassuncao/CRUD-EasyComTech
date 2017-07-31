@@ -7,6 +7,9 @@ import 'rxjs/add/observable/merge';
 import 'rxjs/add/operator/debounceTime';
 import { ProgrammersService } from "../programmers/programmers.service";
 import { Programmer } from "../models/programmer";
+import { knowledge } from "../models/knowledge";
+import { OccupationArea } from "../models/occupationArea";
+import { BankInformation } from "../models/bankInformation";
 
 
 
@@ -19,7 +22,10 @@ export class RegisterComponent implements OnInit, AfterViewInit {
   
   @ViewChildren(FormControlName, { read: ElementRef }) formInputElements: ElementRef[];
   
-  willingnessToWorkId: any;
+  programmer: Programmer
+  occupationArea: OccupationArea
+  bankInformation: BankInformation
+  knowledge: knowledge
 
   accountType: any[]
   bestTimeToWork: any[]
@@ -31,7 +37,7 @@ export class RegisterComponent implements OnInit, AfterViewInit {
   bankInformattionForm: FormGroup;
   knowledgeForm: FormGroup;
 
-  programmer: any;
+  // programmer: any;
   displayMessageEmail: { [key: string]: string } = {};
   displayMessageOccupationArea: { [key: string]: string } = {};
   displayMessageBankInformation: { [key: string]: string } = {};
@@ -67,7 +73,7 @@ export class RegisterComponent implements OnInit, AfterViewInit {
       phone: { required: 'Telefone é requerido.'},
       city:{ required: 'Cidade é requerido.'},
       state:{ required: 'Estado é requerido.'},
-      salaryrequirements: { required: 'pretensão salarial por hora é requerido.'},
+      HourlySalaryRequirements: { required: 'pretensão salarial por hora é requerido.'},
       willingnessToWorkId: { required: 'selecione uma opção'},
       bestTimeToWorkId: { required: 'selecione uma opção'}
     };
@@ -112,7 +118,7 @@ export class RegisterComponent implements OnInit, AfterViewInit {
       city: ['', [Validators.required]],
       state: ['', [Validators.required]],
       portfolio: [''],
-      salaryrequirements: ['', [Validators.required]],
+      HourlySalaryRequirements: ['', [Validators.required]],
       bestTimeToWorkId: ['',[Validators.required]],
       willingnessToWorkId: ['', Validators.required]
     });
@@ -182,22 +188,31 @@ export class RegisterComponent implements OnInit, AfterViewInit {
 
   saveProgrammer(){
 
-    let programmer: Programmer
+    this.programmer = Object.assign({}, this.emailForm.value);
+    this.programmer.bankInformation = Object.assign({}, this.bankInformattionForm.value)
+    this.programmer.knowledge = Object.assign({}, this.knowledgeForm.value)
+    this.programmer.occupationArea =  Object.assign({}, this.occupationAreaForm.value)
 
-    programmer = this.emailForm.value;
-    programmer.bankInformation = this.bankInformattionForm.value
-    programmer.knowledge = this.knowledgeForm.value
-    programmer.occupationArea = this.occupationAreaForm.value
-    console.log(programmer);
-    this.programmerService.saveProgrammer(programmer).map(teste => console.log(teste));
+    //let p = Object.assign({}, this.occupationAreaForm.value, this.bankInformattionForm.value, 
+      //                    this.emailForm.value, this.knowledgeForm.value); //vai mais tem que preenchear todos os campos criai objecto igual ao programmerFULL do back
+    console.log(this.programmer)
+    this.programmerService.saveProgrammer(this.programmer)
+      .subscribe(
+        result => {this.onSaveComplete(result)},
+        error => {this.onSaveError(error)}
+      );
+  }
 
-    // let programmer: any;
-    //programmer.email = this.emailForm.value.email;
-    // programmer.OccupationArea = this.occupationAreaForm.value;
-    // programmer.BankInformation = this.bankInformattionForm.value;
-    // programmer.knowledgeForm.value;
+  onSaveError(error: any){
+    this.errors = JSON.parse(error._body).errors;
+    console.log(this.errors);
+  }
 
-    
+  onSaveComplete(response: any) {
+    console.log(response)
+    //this.occupationAreaForm.reset();
+    this.errors = [];
+
   }
 
 }

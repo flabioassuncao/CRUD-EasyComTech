@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace GTE.Infra.Data.Migrations
 {
-    public partial class initial : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -41,26 +41,26 @@ namespace GTE.Infra.Data.Migrations
                     LevelOfKnowledgeAngularJs = table.Column<int>(nullable: false),
                     LevelOfKnowledgeAspNetMVC = table.Column<int>(nullable: false),
                     LevelOfKnowledgeBootstrap = table.Column<int>(nullable: false),
-                    LevelOfKnowledgeC = table.Column<int>(nullable: false),
-                    LevelOfKnowledgeCPlusPlus = table.Column<int>(nullable: false),
-                    LevelOfKnowledgeCSS = table.Column<int>(nullable: false),
-                    LevelOfKnowledgeCake = table.Column<int>(nullable: false),
-                    LevelOfKnowledgeDjango = table.Column<int>(nullable: false),
-                    LevelOfKnowledgeHTML = table.Column<int>(nullable: false),
+                    LevelOfKnowledgeC = table.Column<int>(nullable: true),
+                    LevelOfKnowledgeCPlusPlus = table.Column<int>(nullable: true),
+                    LevelOfKnowledgeCSS = table.Column<int>(nullable: true),
+                    LevelOfKnowledgeCake = table.Column<int>(nullable: true),
+                    LevelOfKnowledgeDjango = table.Column<int>(nullable: true),
+                    LevelOfKnowledgeHTML = table.Column<int>(nullable: true),
                     LevelOfKnowledgeIOS = table.Column<int>(nullable: false),
-                    LevelOfKnowledgeIllustrator = table.Column<int>(nullable: false),
+                    LevelOfKnowledgeIllustrator = table.Column<int>(nullable: true),
                     LevelOfKnowledgeIonic = table.Column<int>(nullable: false),
-                    LevelOfKnowledgeJava = table.Column<int>(nullable: false),
+                    LevelOfKnowledgeJava = table.Column<int>(nullable: true),
                     LevelOfKnowledgeJquery = table.Column<int>(nullable: false),
-                    LevelOfKnowledgeMajento = table.Column<int>(nullable: false),
-                    LevelOfKnowledgeMySQL = table.Column<int>(nullable: false),
-                    LevelOfKnowledgeMySQLServer = table.Column<int>(nullable: false),
+                    LevelOfKnowledgeMajento = table.Column<int>(nullable: true),
+                    LevelOfKnowledgeMySQL = table.Column<int>(nullable: true),
+                    LevelOfKnowledgeMySQLServer = table.Column<int>(nullable: true),
                     LevelOfKnowledgePHP = table.Column<int>(nullable: false),
-                    LevelOfKnowledgePhotoshop = table.Column<int>(nullable: false),
-                    LevelOfKnowledgePhyton = table.Column<int>(nullable: false),
-                    LevelOfKnowledgeRuby = table.Column<int>(nullable: false),
-                    LevelOfKnowledgeSEO = table.Column<int>(nullable: false),
-                    LevelOfKnowledgeSalesforce = table.Column<int>(nullable: false),
+                    LevelOfKnowledgePhotoshop = table.Column<int>(nullable: true),
+                    LevelOfKnowledgePhyton = table.Column<int>(nullable: true),
+                    LevelOfKnowledgeRuby = table.Column<int>(nullable: true),
+                    LevelOfKnowledgeSEO = table.Column<int>(nullable: true),
+                    LevelOfKnowledgeSalesforce = table.Column<int>(nullable: true),
                     LevelOfKnowledgeWordpress = table.Column<int>(nullable: false),
                     LinkCRUD = table.Column<string>(nullable: true),
                     OtherLanguageOrFramework = table.Column<string>(nullable: true),
@@ -89,7 +89,7 @@ namespace GTE.Infra.Data.Migrations
                 {
                     Id = table.Column<Guid>(nullable: false),
                     AccountNumber = table.Column<string>(nullable: true),
-                    AccountTypeId = table.Column<Guid>(nullable: false),
+                    AccountTypeId = table.Column<Guid>(nullable: true),
                     Agency = table.Column<string>(nullable: true),
                     Bank = table.Column<string>(nullable: true),
                     CPF = table.Column<string>(nullable: true),
@@ -104,7 +104,7 @@ namespace GTE.Infra.Data.Migrations
                         column: x => x.AccountTypeId,
                         principalTable: "AccountType",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(

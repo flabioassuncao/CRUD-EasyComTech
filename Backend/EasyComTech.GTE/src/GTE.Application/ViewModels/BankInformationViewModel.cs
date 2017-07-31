@@ -21,7 +21,7 @@ namespace GTE.Application.ViewModels
 
         public string Agency { get; set; }
 
-        public Guid AccountTypeId { get; set; }
+        public Guid? AccountTypeId { get; set; }
         public AccountTypeViewModel AccountType { get; set; }
 
         public string AccountNumber { get; set; }

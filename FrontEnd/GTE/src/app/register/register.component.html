@@ -3,7 +3,7 @@
       </section>
 
       <section class="content">
-<form novalidate (ngSubmit)="adicionarOrganizador()" [formGroup]="emailForm">
+<form novalidate [formGroup]="emailForm">
         <div class="jumbotron welcome-jumbotron">
            <h1>Cadastre-se</h1>
            <p>
@@ -212,7 +212,7 @@
                         <div class="col-xs-6">
                           <div class="form-group" [ngClass]="{'has-error': displayMessageOccupationArea.salaryrequirements }">
                             <label class="pull-left">Qual sua pretensão salarial por hora? <span class="mandatory">*</span></label>
-                            <input type="text" class="form-control"  placeholder="Enter pretensão salarial por hora" formControlName="salaryrequirements">
+                            <input type="text" class="form-control"  placeholder="Enter pretensão salarial por hora" formControlName="HourlySalaryRequirements">
                             <span class="text-danger" *ngIf="displayMessageOccupationArea.salaryrequirements">
                               <p [innerHTML]="displayMessageOccupationArea.salaryrequirements"></p>
                             </span> 

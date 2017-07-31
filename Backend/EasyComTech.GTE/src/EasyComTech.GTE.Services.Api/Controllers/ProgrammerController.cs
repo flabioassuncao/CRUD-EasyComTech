@@ -1,8 +1,5 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using GTE.Application.Interfaces;
 using GTE.Application.ViewModels;
@@ -34,10 +31,10 @@ namespace EasyComTech.GTE.Services.Api.Controllers
 
         [HttpPost]
         [Route("add-programmer")]
-        public IActionResult Post([FromBody] ProgrammerViewModel model)
+        public IActionResult Post([FromBody]ProgrammerViewModel model)
         {
             _programmerAppService.AddProgrammer(model);
-            return Response();
+            return Response(model);
         }
 
         [HttpPut]
