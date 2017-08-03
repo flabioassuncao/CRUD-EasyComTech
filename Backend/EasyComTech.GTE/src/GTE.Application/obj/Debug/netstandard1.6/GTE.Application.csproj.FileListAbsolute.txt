@@ -7,3 +7,12 @@ C:\projetos\Pessoal\EasyComTec\CRUD-EasyComTech\Backend\EasyComTech.GTE\src\GTE.
 C:\projetos\Pessoal\EasyComTec\CRUD-EasyComTech\Backend\EasyComTech.GTE\src\GTE.Application\bin\Debug\netstandard1.6\GTE.Domain.dll
 C:\projetos\Pessoal\EasyComTec\CRUD-EasyComTech\Backend\EasyComTech.GTE\src\GTE.Application\bin\Debug\netstandard1.6\GTE.Domain.pdb
 C:\projetos\Pessoal\EasyComTec\CRUD-EasyComTech\Backend\EasyComTech.GTE\src\GTE.Application\obj\Debug\netstandard1.6\GTE.Application.csprojResolveAssemblyReference.cache
+D:\projetos\Pessoal\EasyComTec\CRUD-EasyComTech\Backend\EasyComTech.GTE\src\GTE.Application\bin\Debug\netstandard1.6\GTE.Application.deps.json
+D:\projetos\Pessoal\EasyComTec\CRUD-EasyComTech\Backend\EasyComTech.GTE\src\GTE.Application\bin\Debug\netstandard1.6\GTE.Application.dll
+D:\projetos\Pessoal\EasyComTec\CRUD-EasyComTech\Backend\EasyComTech.GTE\src\GTE.Application\bin\Debug\netstandard1.6\GTE.Application.pdb
+D:\projetos\Pessoal\EasyComTec\CRUD-EasyComTech\Backend\EasyComTech.GTE\src\GTE.Application\bin\Debug\netstandard1.6\GTE.Domain.dll
+D:\projetos\Pessoal\EasyComTec\CRUD-EasyComTech\Backend\EasyComTech.GTE\src\GTE.Application\bin\Debug\netstandard1.6\GTE.Domain.pdb
+D:\projetos\Pessoal\EasyComTec\CRUD-EasyComTech\Backend\EasyComTech.GTE\src\GTE.Application\obj\Debug\netstandard1.6\GTE.Application.csprojResolveAssemblyReference.cache
+D:\projetos\Pessoal\EasyComTec\CRUD-EasyComTech\Backend\EasyComTech.GTE\src\GTE.Application\obj\Debug\netstandard1.6\GTE.Application.AssemblyInfo.cs
+D:\projetos\Pessoal\EasyComTec\CRUD-EasyComTech\Backend\EasyComTech.GTE\src\GTE.Application\obj\Debug\netstandard1.6\GTE.Application.dll
+D:\projetos\Pessoal\EasyComTec\CRUD-EasyComTech\Backend\EasyComTech.GTE\src\GTE.Application\obj\Debug\netstandard1.6\GTE.Application.pdb

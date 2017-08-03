@@ -4453,15 +4453,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\flabi\\.nuget\\packages\\": {}
+    "C:\\Users\\Flabio\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\projetos\\Pessoal\\EasyComTec\\CRUD-EasyComTech\\Backend\\EasyComTech.GTE\\src\\GTE.Domain\\GTE.Domain.csproj",
+      "projectUniqueName": "D:\\projetos\\Pessoal\\EasyComTec\\CRUD-EasyComTech\\Backend\\EasyComTech.GTE\\src\\GTE.Domain\\GTE.Domain.csproj",
       "projectName": "GTE.Domain",
-      "projectPath": "C:\\projetos\\Pessoal\\EasyComTec\\CRUD-EasyComTech\\Backend\\EasyComTech.GTE\\src\\GTE.Domain\\GTE.Domain.csproj",
-      "outputPath": "C:\\projetos\\Pessoal\\EasyComTec\\CRUD-EasyComTech\\Backend\\EasyComTech.GTE\\src\\GTE.Domain\\obj\\",
+      "projectPath": "D:\\projetos\\Pessoal\\EasyComTec\\CRUD-EasyComTech\\Backend\\EasyComTech.GTE\\src\\GTE.Domain\\GTE.Domain.csproj",
+      "outputPath": "D:\\projetos\\Pessoal\\EasyComTec\\CRUD-EasyComTech\\Backend\\EasyComTech.GTE\\src\\GTE.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netstandard1.6"

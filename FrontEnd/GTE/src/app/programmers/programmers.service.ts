@@ -75,14 +75,24 @@ export class ProgrammersService {
         return response;
     }
 
-    saveProgrammer(programmer: any) : Observable<Programmer>{
-        console.log(programmer);
+    saveProgrammer(programmer: Programmer) : Observable<Programmer>{
         let body = JSON.stringify(programmer);
-        console.log(body);
         let headers = new Headers({'Content-Type': 'application/json'});
         let options = new RequestOptions({ headers: headers });
 
         let response = this.http.post(`${MEAT_API}add-programmer`, body, options)
+            .map(this.extractData)
+            .catch(ErrorHandler.handleError)
+        
+        return response;
+    }
+
+    updateProgrammer(programmer: any) : Observable<Programmer>{
+        let body = JSON.stringify(programmer);
+        let headers = new Headers({'Content-Type': 'application/json'});
+        let options = new RequestOptions({ headers: headers });
+
+        let response = this.http.put(`${MEAT_API}update-programmer`, body, options)
             .map(this.extractData)
             .catch(ErrorHandler.handleError)
         

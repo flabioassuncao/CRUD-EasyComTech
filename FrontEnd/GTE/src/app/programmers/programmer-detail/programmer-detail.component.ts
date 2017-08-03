@@ -18,7 +18,6 @@ export class ProgrammerDetailComponent implements OnInit {
   }
 
   DeleteProgrammer(){
-    // this.programmersService.deleteProgrammer(this.route.snapshot.params['id']);
     this.router.navigate(['./programmers'])
   }
 

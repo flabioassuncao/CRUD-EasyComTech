@@ -4473,7 +4473,7 @@
       ]
     },
     "Dapper/1.50.2": {
-      "sha512": "31Ju5VGyNNc66OAsw+SCp1TWPBuyw8ZBdkMG5pSUPChZcy27s2GhVz5B9INP4f25mPqfiJ+mfeHy9JAJyyT+LQ==",
+      "sha512": "6VcCiiOxVhgMwgMCuQuaff8I5IyDamrzeOjuUH1iMExh8R5TJqwkVCpwdVJGQdwSCqWsQA/PerrrK7T6mONthQ==",
       "type": "package",
       "path": "dapper/1.50.2",
       "files": [
@@ -11345,15 +11345,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\flabi\\.nuget\\packages\\": {}
+    "C:\\Users\\Flabio\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\projetos\\Pessoal\\EasyComTec\\CRUD-EasyComTech\\Backend\\EasyComTech.GTE\\src\\EasyComTech.GTE.Services.Api\\EasyComTech.GTE.Services.Api.csproj",
+      "projectUniqueName": "D:\\projetos\\Pessoal\\EasyComTec\\CRUD-EasyComTech\\Backend\\EasyComTech.GTE\\src\\EasyComTech.GTE.Services.Api\\EasyComTech.GTE.Services.Api.csproj",
       "projectName": "EasyComTech.GTE.Services.Api",
-      "projectPath": "C:\\projetos\\Pessoal\\EasyComTec\\CRUD-EasyComTech\\Backend\\EasyComTech.GTE\\src\\EasyComTech.GTE.Services.Api\\EasyComTech.GTE.Services.Api.csproj",
-      "outputPath": "C:\\projetos\\Pessoal\\EasyComTec\\CRUD-EasyComTech\\Backend\\EasyComTech.GTE\\src\\EasyComTech.GTE.Services.Api\\obj\\",
+      "projectPath": "D:\\projetos\\Pessoal\\EasyComTec\\CRUD-EasyComTech\\Backend\\EasyComTech.GTE\\src\\EasyComTech.GTE.Services.Api\\EasyComTech.GTE.Services.Api.csproj",
+      "outputPath": "D:\\projetos\\Pessoal\\EasyComTec\\CRUD-EasyComTech\\Backend\\EasyComTech.GTE\\src\\EasyComTech.GTE.Services.Api\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
@@ -11361,11 +11361,11 @@
       "frameworks": {
         "netcoreapp1.1": {
           "projectReferences": {
-            "C:\\projetos\\Pessoal\\EasyComTec\\CRUD-EasyComTech\\Backend\\EasyComTech.GTE\\src\\GTE.Infra.Data\\GTE.Infra.Data.csproj": {
-              "projectPath": "C:\\projetos\\Pessoal\\EasyComTec\\CRUD-EasyComTech\\Backend\\EasyComTech.GTE\\src\\GTE.Infra.Data\\GTE.Infra.Data.csproj"
+            "D:\\projetos\\Pessoal\\EasyComTec\\CRUD-EasyComTech\\Backend\\EasyComTech.GTE\\src\\GTE.Infra.Data\\GTE.Infra.Data.csproj": {
+              "projectPath": "D:\\projetos\\Pessoal\\EasyComTec\\CRUD-EasyComTech\\Backend\\EasyComTech.GTE\\src\\GTE.Infra.Data\\GTE.Infra.Data.csproj"
             },
-            "C:\\projetos\\Pessoal\\EasyComTec\\CRUD-EasyComTech\\Backend\\EasyComTech.GTE\\src\\GTE.Infra.CrossCutting.IoC\\GTE.Infra.CrossCutting.IoC.csproj": {
-              "projectPath": "C:\\projetos\\Pessoal\\EasyComTec\\CRUD-EasyComTech\\Backend\\EasyComTech.GTE\\src\\GTE.Infra.CrossCutting.IoC\\GTE.Infra.CrossCutting.IoC.csproj"
+            "D:\\projetos\\Pessoal\\EasyComTec\\CRUD-EasyComTech\\Backend\\EasyComTech.GTE\\src\\GTE.Infra.CrossCutting.IoC\\GTE.Infra.CrossCutting.IoC.csproj": {
+              "projectPath": "D:\\projetos\\Pessoal\\EasyComTec\\CRUD-EasyComTech\\Backend\\EasyComTech.GTE\\src\\GTE.Infra.CrossCutting.IoC\\GTE.Infra.CrossCutting.IoC.csproj"
             }
           }
         }

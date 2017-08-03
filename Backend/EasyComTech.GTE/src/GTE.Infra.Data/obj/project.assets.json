@@ -2297,7 +2297,7 @@
   },
   "libraries": {
     "Dapper/1.50.2": {
-      "sha512": "31Ju5VGyNNc66OAsw+SCp1TWPBuyw8ZBdkMG5pSUPChZcy27s2GhVz5B9INP4f25mPqfiJ+mfeHy9JAJyyT+LQ==",
+      "sha512": "6VcCiiOxVhgMwgMCuQuaff8I5IyDamrzeOjuUH1iMExh8R5TJqwkVCpwdVJGQdwSCqWsQA/PerrrK7T6mONthQ==",
       "type": "package",
       "path": "dapper/1.50.2",
       "files": [
@@ -6931,15 +6931,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\flabi\\.nuget\\packages\\": {}
+    "C:\\Users\\Flabio\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\projetos\\Pessoal\\EasyComTec\\CRUD-EasyComTech\\Backend\\EasyComTech.GTE\\src\\GTE.Infra.Data\\GTE.Infra.Data.csproj",
+      "projectUniqueName": "D:\\projetos\\Pessoal\\EasyComTec\\CRUD-EasyComTech\\Backend\\EasyComTech.GTE\\src\\GTE.Infra.Data\\GTE.Infra.Data.csproj",
       "projectName": "GTE.Infra.Data",
-      "projectPath": "C:\\projetos\\Pessoal\\EasyComTec\\CRUD-EasyComTech\\Backend\\EasyComTech.GTE\\src\\GTE.Infra.Data\\GTE.Infra.Data.csproj",
-      "outputPath": "C:\\projetos\\Pessoal\\EasyComTec\\CRUD-EasyComTech\\Backend\\EasyComTech.GTE\\src\\GTE.Infra.Data\\obj\\",
+      "projectPath": "D:\\projetos\\Pessoal\\EasyComTec\\CRUD-EasyComTech\\Backend\\EasyComTech.GTE\\src\\GTE.Infra.Data\\GTE.Infra.Data.csproj",
+      "outputPath": "D:\\projetos\\Pessoal\\EasyComTec\\CRUD-EasyComTech\\Backend\\EasyComTech.GTE\\src\\GTE.Infra.Data\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netstandard1.6"
@@ -6947,8 +6947,8 @@
       "frameworks": {
         "netstandard1.6": {
           "projectReferences": {
-            "C:\\projetos\\Pessoal\\EasyComTec\\CRUD-EasyComTech\\Backend\\EasyComTech.GTE\\src\\GTE.Domain\\GTE.Domain.csproj": {
-              "projectPath": "C:\\projetos\\Pessoal\\EasyComTec\\CRUD-EasyComTech\\Backend\\EasyComTech.GTE\\src\\GTE.Domain\\GTE.Domain.csproj"
+            "D:\\projetos\\Pessoal\\EasyComTec\\CRUD-EasyComTech\\Backend\\EasyComTech.GTE\\src\\GTE.Domain\\GTE.Domain.csproj": {
+              "projectPath": "D:\\projetos\\Pessoal\\EasyComTec\\CRUD-EasyComTech\\Backend\\EasyComTech.GTE\\src\\GTE.Domain\\GTE.Domain.csproj"
             }
           }
         }

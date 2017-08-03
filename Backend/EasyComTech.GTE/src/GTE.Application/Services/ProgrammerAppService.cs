@@ -72,7 +72,7 @@ namespace GTE.Application.Services
 
 
             var programmerObj = _mapper.Map<Programmer>(programmer);
-            _programmerRepository.Add(programmerObj);
+            _programmerRepository.Update(programmerObj);
 
             _unitOfWork.Commit();
         }

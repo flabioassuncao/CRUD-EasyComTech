@@ -10,6 +10,7 @@ import { Programmer } from "../models/programmer";
 import { knowledge } from "../models/knowledge";
 import { OccupationArea } from "../models/occupationArea";
 import { BankInformation } from "../models/bankInformation";
+import { ActivatedRoute, Router } from "@angular/router";
 
 
 
@@ -22,6 +23,9 @@ export class RegisterComponent implements OnInit, AfterViewInit {
   
   @ViewChildren(FormControlName, { read: ElementRef }) formInputElements: ElementRef[];
   
+  isUpdate: boolean = false;
+
+  ProgrammerEdit: any
   programmer: Programmer
   occupationArea: OccupationArea
   bankInformation: BankInformation
@@ -37,7 +41,6 @@ export class RegisterComponent implements OnInit, AfterViewInit {
   bankInformattionForm: FormGroup;
   knowledgeForm: FormGroup;
 
-  // programmer: any;
   displayMessageEmail: { [key: string]: string } = {};
   displayMessageOccupationArea: { [key: string]: string } = {};
   displayMessageBankInformation: { [key: string]: string } = {};
@@ -55,7 +58,9 @@ export class RegisterComponent implements OnInit, AfterViewInit {
 
   constructor(private fb: FormBuilder,
               vcr: ViewContainerRef,
-              private programmerService: ProgrammersService) { 
+              private programmerService: ProgrammersService,
+              private route: ActivatedRoute,
+              private router: Router) { 
 
     this.validationMessagesEmail = {
       email: {
@@ -107,10 +112,25 @@ export class RegisterComponent implements OnInit, AfterViewInit {
 
 
     this.emailForm = this.fb.group({
+      id: [''],
+      excluded: [''],
+      occupationAreaId: [''],
+      occupationArea: [''],
+      bankInformationId :[''],
+      bankInformation: [''],
+      knowledgeId: [''],
+      knowledge:[''],
+
       email: ['', [Validators.required, Validators.email]]
     });
 
     this.occupationAreaForm = this.fb.group({
+      id: [''],
+      willingnessToWork: [''],
+      bestTimeToWork: [''],
+      programmerId: [''],
+      programmer: [''],
+
       name: ['', [Validators.required, Validators.minLength(2)]],
       skype: ['', [Validators.required]],
       linkedin: [''],
@@ -118,12 +138,17 @@ export class RegisterComponent implements OnInit, AfterViewInit {
       city: ['', [Validators.required]],
       state: ['', [Validators.required]],
       portfolio: [''],
-      HourlySalaryRequirements: ['', [Validators.required]],
+      hourlySalaryRequirements: [null, [Validators.required, Validators.max(1000)]],
       bestTimeToWorkId: ['',[Validators.required]],
       willingnessToWorkId: ['', Validators.required]
     });
 
     this.bankInformattionForm = this.fb.group({
+      id: [''],
+      accountType: [''],
+      programmerId: [''],
+      programmer: [''],
+
       name: [''],
       cpf: [''],
       bank: [''],
@@ -133,6 +158,11 @@ export class RegisterComponent implements OnInit, AfterViewInit {
     });
 
     this.knowledgeForm = this.fb.group({
+      id: [''],
+      programmerId: [''],
+      programmer: [''],
+
+
       levelOfKnowledgeIonic: ['', [Validators.required]],
       levelOfKnowledgeAndroid: ['', [Validators.required]],
       levelOfKnowledgeIOS: ['', [Validators.required]],
@@ -161,7 +191,23 @@ export class RegisterComponent implements OnInit, AfterViewInit {
       otherLanguageOrFramework: [''],
       linkCRUD: ['']
     });
-    
+
+
+    if(this.route.snapshot.params['id'] === undefined){
+      // console.log("true")
+    }else{
+      this.isUpdate = true;
+      this.programmerService.programmer(this.route.snapshot.params['id'])
+          .subscribe(program => this.completeForms(program));
+    }
+  }
+
+  completeForms(programmer: any)
+  {
+    this.emailForm.setValue(programmer);
+    this.occupationAreaForm.setValue(programmer.occupationArea);
+    this.bankInformattionForm.setValue(programmer.bankInformation)
+    this.knowledgeForm.setValue(programmer.knowledge);
   }
 
   ngAfterViewInit(): void {
@@ -187,20 +233,48 @@ export class RegisterComponent implements OnInit, AfterViewInit {
 
 
   saveProgrammer(){
-
+    
     this.programmer = Object.assign({}, this.emailForm.value);
     this.programmer.bankInformation = Object.assign({}, this.bankInformattionForm.value)
     this.programmer.knowledge = Object.assign({}, this.knowledgeForm.value)
     this.programmer.occupationArea =  Object.assign({}, this.occupationAreaForm.value)
 
-    //let p = Object.assign({}, this.occupationAreaForm.value, this.bankInformattionForm.value, 
-      //                    this.emailForm.value, this.knowledgeForm.value); //vai mais tem que preenchear todos os campos criai objecto igual ao programmerFULL do back
-    console.log(this.programmer)
-    this.programmerService.saveProgrammer(this.programmer)
+    if(this.isUpdate){
+      this.programmerService.updateProgrammer(this.programmer)
       .subscribe(
         result => {this.onSaveComplete(result)},
         error => {this.onSaveError(error)}
       );
+    }
+    else{
+      delete this.programmer['id'];
+      delete this.programmer['excluded'];
+      delete this.programmer['occupationAreaId'];
+      delete this.programmer['bankInformationId'];
+      delete this.programmer['knowledgeId'];
+
+      delete this.programmer.occupationArea['id'];
+      delete this.programmer.occupationArea['willingnessToWork'];
+      delete this.programmer.occupationArea['bestTimeToWork'];
+      delete this.programmer.occupationArea['programmerId'];
+      delete this.programmer.occupationArea['programmer'];
+
+      delete this.programmer.bankInformation['id'];
+      delete this.programmer.bankInformation['accountType'];
+      delete this.programmer.bankInformation['programmerId'];
+      delete this.programmer.bankInformation['programmer'];
+
+      delete this.programmer.knowledge['id'];
+      delete this.programmer.knowledge['programmerId'];
+      delete this.programmer.knowledge['programmer'];
+
+      this.programmerService.saveProgrammer(this.programmer)
+      .subscribe(
+        result => {this.onSaveComplete(result)},
+        error => {this.onSaveError(error)}
+      );
+    }
+    
   }
 
   onSaveError(error: any){
@@ -209,10 +283,8 @@ export class RegisterComponent implements OnInit, AfterViewInit {
   }
 
   onSaveComplete(response: any) {
-    console.log(response)
-    //this.occupationAreaForm.reset();
     this.errors = [];
-
+    this.router.navigate(['./programmers'])
   }
 
 }
