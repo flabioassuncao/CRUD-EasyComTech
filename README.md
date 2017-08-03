@@ -1,6 +1,24 @@
 # CRUD EasyComTech
 
  - Sistema sobre gerenciamento de talentos da Easy(GTE).
+
+## Tecnologias Back 
+ ```sh
+ASP.NET Core
+Entity Framework CORE
+Dapper
+Swagger
+Sql Server
+AutoMapper
+Injeção de depêndencia
+Divisão em camadas
+```
+## Tecnologias Front 
+ ```sh
+Angular 4
+Bootstrap
+```
+ 
  
 ## Prints 
  
